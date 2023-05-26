@@ -15,14 +15,23 @@ export const Header = () => {
 
   return (
     <AppBar position="static">
-      <Container sx={{ background: Colors.darkBlue, px: 3, py: 1 }} maxWidth="xl">
+      <Container
+        sx={{ background: Colors.darkBlue, px: 3, py: 1 }}
+        maxWidth="xl"
+      >
         <Toolbar disableGutters>
           <NavigationMenu
             isMenuOpened={isMenuOpened}
             handleMenuChange={handleMenuChange}
           />
 
-          <Box sx={{ flexGrow: { xs: 1, md: 0 }, textAlign: "center" }}>
+          <Box
+            sx={{
+              flexGrow: { xs: 1, md: 0 },
+              textAlign: "center",
+              ml: { md: 5 },
+            }}
+          >
             <Box component="img" src={Logo} alt="Logo" />
           </Box>
 

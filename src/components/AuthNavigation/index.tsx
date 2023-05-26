@@ -46,6 +46,7 @@ export const AuthNavigation = ({
           px: 3,
           py: 1,
           ml: 2,
+          mr: { md: 5 },
           fontWeight: 600,
           flexGrow: 0,
         }}

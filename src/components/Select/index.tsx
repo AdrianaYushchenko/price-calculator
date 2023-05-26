@@ -22,6 +22,7 @@ export const NewSelect = () => {
           color: Colors.white,
           ".MuiSelect-select": {
             display: "flex",
+              py: { xs: 1},
           },
           ".MuiOutlinedInput-notchedOutline": { border: 0 },
           ".MuiSvgIcon-root ": {
@@ -57,34 +58,33 @@ export const NewSelect = () => {
           },
         }}
       >
-        {CURRENCIES.map(
-          ({ name, image }) => (
-            <MenuItem
-              value={name}
+        {CURRENCIES.map(({ name, image }) => (
+          <MenuItem
+            value={name}
+            sx={{
+              backgroundColor: Colors.darkBlue,
+              my: 0,
+              "&:hover": {
+                backgroundColor: Colors.darkBlueHover,
+                borderRight: `1px solid ${Colors.yellow}`,
+                color: Colors.yellow,
+              },
+            }}
+          >
+            <Box component="img" src={image} alt={name} sx={{ mr: 1 }} />
+            <Typography
               sx={{
-                backgroundColor: Colors.darkBlue,
+                color: Colors.white,
                 "&:hover": {
-                  backgroundColor: Colors.darkBlueHover,
-                  borderRight: `1px solid ${Colors.yellow}`,
                   color: Colors.yellow,
                 },
               }}
+              variant="body1"
             >
-              <Box component="img" src={image} alt={name} sx={{ mr: 1 }} />
-              <Typography
-                sx={{
-                  color: Colors.white,
-                  "&:hover": {
-                    color: Colors.yellow,
-                  },
-                }}
-                variant="body1"
-              >
-                {name}
-              </Typography>
-            </MenuItem>
-          )
-        )}
+              {name}
+            </Typography>
+          </MenuItem>
+        ))}
       </Select>
     </FormControl>
   );
