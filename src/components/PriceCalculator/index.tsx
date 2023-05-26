@@ -10,12 +10,14 @@ export const PriceCalculator = () => {
 
   useEffect(() => {
     convertValue(value.input);
-  }, [selectedCurrency]);
+  }, [selectedCurrency]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const convertValue = (value: number) => {
     setValue({
       input: value,
-      converted: Math.floor(value * (GOLD_ITEM_PRICE * selectedCurrency.ratesRatio)),
+      converted: Math.floor(
+        value * (GOLD_ITEM_PRICE * selectedCurrency.ratesRatio)
+      ),
     });
   };
   return (
